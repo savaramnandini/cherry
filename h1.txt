@@ -1,0 +1,160 @@
+#include <stdio.h>
+
+float pi_value();
+int square();
+float area_of_circle(int r);
+int is_oval(char );
+int is_even(int );
+//int is_odd(int );
+void  pattern(int );
+int counting_even(int a[]);
+int counting_odd(int a[]);
+void double_array(int a[]);
+
+int main(void)
+ {
+ int answer;
+ float result,r1;
+ int r2;
+ int evencount,oddcount,a[10]={1,2,3,4,5,6,7,8,9,10};
+ result = pi_value();
+ printf("the value of pi is %f ", result);
+ answer = square(5);
+ printf("\n square of 5 is %d", answer); 
+ printf("\n enter the radius");
+ r1 = area_of_circle(3);
+printf("the area of circle is %f",r1);
+r2 = is_oval('e');
+if(r2==1)
+printf("\n the charcter is an oval");
+else
+printf("it is a consonant");
+if(is_even(6))
+{
+  printf("\n the number is even");
+}
+pattern(3);
+evencount = counting_even(a);
+pattern(10);
+printf("\n");
+printf(" and the count of even is %d",evencount);
+oddcount = counting_odd(a);
+printf("\n and the count of odd is %d\n",oddcount);
+printf("\n the double of array is");
+double_array(a);
+printf("the original array is");
+for(int i=0;i<10;i++)
+{
+  printf("\n %d",a[i]);
+}
+ }
+float pi_value()
+{
+  float value;
+    value = 3.14;
+  return value;
+}
+
+int square(int x)
+{ 
+  int ans;
+  ans = x*x;
+  return ans;
+}
+
+float area_of_circle(int r)
+{ int ca;
+  float pi;
+  pi = pi_value();
+  ca = pi*square(r);
+  return ca;
+}
+
+  
+int is_oval(char x)
+{
+  if(x=='a'||x=='e'||x=='i'||x=='o'||x=='u')
+  { int r22;
+    r22=1;
+    return r22;
+  }
+  else
+  { int r22;
+    r22=0;
+    return r22;
+  }
+}
+
+int is_odd(int n)
+{
+  if(n % 2 != 0)
+  {
+    return 1;
+  }
+  else
+  {
+    return 0;
+  }
+}
+int is_even(int n)
+{
+  if( n%2 == 0)
+  {
+    return 1;
+  }
+  else
+  {
+    return 0;
+  }
+}
+
+void pattern(int n)
+{
+  for(int i=1;i<=n-1;i++)
+  {
+    printf("%d, ",i);
+  }
+  printf("& %d",n);
+  printf("\n ");
+}
+  
+int counting_even(int a[])
+{
+  int count = 0;
+   for(int i = 0; i<=9;)
+  {
+     if(is_even(a[i])==1)
+      {
+      count++;
+    }
+    i++;
+  }
+return count;        
+}
+
+int counting_odd(int a[])
+{
+  int count=0;
+  for(int i = 0; i<=9;)
+  {
+    //printf("\n%d", a[i]);
+    if(is_odd(a[i] == 1))
+    {
+      count++;
+    }
+    i++;
+  }
+  return count;
+}
+
+void double_array(int a[])
+{int i;
+  for(i=0;i<10;i++)
+  {
+    a[i]=2*a[i];
+  }
+  for(i=0;i<10;i++)
+  {
+  printf("\n %d",a[i]);
+  }
+}
